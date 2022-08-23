@@ -1,0 +1,11 @@
+div.card-container{
+
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    
+}
+.card{
+    background-color: black;
+    color: white;
+}

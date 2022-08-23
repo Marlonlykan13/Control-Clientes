@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "nombre": "Marlon",
+      "apellido": "Perez",
+      "direccion": "julio de postigo",
+      "id": 3
+    },
+    {
+      "nombre": "pedro",
+      "apellido": "abreu",
+      "direccion": "clalala",
+      "id": 4
+    },
+    {
+      "nombre": "marianne",
+      "apellido": "betancourd",
+      "direccion": "av.independencia",
+      "id": 5
+    },
+    {
+      "nombre": "asdsad",
+      "apellido": "asdas",
+      "direccion": "asdasda",
+      "id": 6
+    },
+    {
+      "nombre": "dsd",
+      "apellido": "asdasd",
+      "direccion": "asdasd",
+      "id": 7
+    },
+    {
+      "nombre": "asdas",
+      "apellido": "dasdas",
+      "direccion": "asdasdas",
+      "id": 8
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

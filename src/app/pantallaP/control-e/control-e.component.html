@@ -1,0 +1,132 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <h1 style="color: white">Control De Empleados</h1>
+    <div class="d-flex">
+      <button
+        (click)="Mostrar_BAgregar()"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        agregar empleados
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="card-container">
+  <div
+    class="card"
+    style="width: 18rem; margin: 10px"
+    *ngFor="let data of ListEmpleados"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{ data.nombre }} {{ data.apellido }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Direccion</h6>
+      <p class="card-text">{{ data.direccion }}</p>
+      <button
+        style="margin: 5px"
+        (click)="onEdit(data)"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        class="btn btn-primary"
+      >
+        Editar
+      </button>
+      <button (click)="EliminarEmpleado(data)" class="btn btn-danger">
+        Borrar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Empleado</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Nombre Empleado</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="Nombre"
+              id="exampleFormControlInput1"
+              placeholder=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Apellido Empleado</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="Apellido"
+              id="exampleFormControlInput1"
+              placeholder=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Direccion</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="Direccion"
+              id="exampleFormControlInput1"
+              placeholder=""
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          id="cancel"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          *ngIf="mostrarP"
+          type="button"
+          (click)="postEmpleadoD()"
+          class="btn btn-primary"
+        >
+          Agregar
+        </button>
+        <button
+          *ngIf="mostrarA"
+          type="button"
+          (click)="ActualizarCliente()"
+          class="btn btn-success"
+        >
+          Actualizar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
